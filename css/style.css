@@ -237,56 +237,54 @@ body > .page-glow, body > .grid-bg { z-index: 1; }
   }
 }
 
-/* ===== NexoMC Main Menu — smooth mobile panel ===== */
-/* Touch / selection polish: menu controls should behave like native app controls,
-   without the blue text-selection/tap flash seen on mobile browsers. */
-.menu-btn,.menu-close,.menu-group-toggle,.menu-item,.menu-group-icon,.menu-item-icon,.menu-chevron,.menu-icon,.menu-title,.menu-note{
+/* ===== NexoMC Sidebar — left slide-in panel, icon-first (adapted from user's sidebar reference) ===== */
+.side-nav-toggle,.side-nav-close,.side-nav-group-toggle,.side-nav-item{
   -webkit-tap-highlight-color:transparent;
   -webkit-user-select:none;
   user-select:none;
+  -webkit-touch-callout:none;
 }
-.menu-btn:focus,.menu-close:focus,.menu-group-toggle:focus,.menu-item:focus{outline:none}
-.menu-btn:focus-visible,.menu-close:focus-visible,.menu-group-toggle:focus-visible,.menu-item:focus-visible{
+.side-nav-toggle:focus,.side-nav-close:focus,.side-nav-group-toggle:focus,.side-nav-item:focus{outline:none}
+.side-nav-toggle:focus-visible,.side-nav-close:focus-visible,.side-nav-group-toggle:focus-visible,.side-nav-item:focus-visible{
   outline:2px solid rgba(155,108,255,.65);
   outline-offset:2px;
 }
-.menu-group-toggle,.menu-item{-webkit-touch-callout:none}
-.menu-btn{height:44px;padding:0 13px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);display:flex;align-items:center;gap:9px;font-weight:800;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
-.menu-btn:hover{border-color:rgba(139,92,246,.55);background:rgba(139,92,246,.08);transform:translateY(-1px)}
-.menu-icon{width:18px;height:18px;display:grid;align-content:center;gap:4px;flex:0 0 18px}
-.menu-icon i{display:block;height:2px;border-radius:3px;background:currentColor;width:18px}
-.menu-icon i:nth-child(2){width:12px}
-.menu-drawer{position:fixed;inset:0;z-index:100;visibility:hidden;pointer-events:none}
-.menu-drawer.open{visibility:visible;pointer-events:auto}
-.menu-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.60);opacity:0;transition:opacity .24s ease;will-change:opacity}
-.menu-panel{position:absolute;top:0;right:0;width:min(380px,88vw);height:100%;background:linear-gradient(180deg,rgba(8,8,13,.985),rgba(5,5,9,.985));border-left:1px solid rgba(255,255,255,.1);box-shadow:-18px 0 55px rgba(0,0,0,.42);transform:translate3d(102%,0,0);transition:transform .28s cubic-bezier(.22,.8,.24,1);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;will-change:transform;backface-visibility:hidden}
-.menu-drawer.open .menu-backdrop{opacity:1}.menu-drawer.open .menu-panel{transform:translate3d(0,0,0)}
-.menu-head{display:flex;align-items:center;justify-content:space-between;padding:28px 24px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(8,8,13,.97);z-index:3}
-.menu-title{font:700 30px/1 "Space Grotesk";letter-spacing:-1.5px}.menu-title em{font-style:normal;color:var(--accent2)}
-.menu-close{width:44px;height:44px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.04);color:var(--text);font-size:26px;line-height:1;cursor:pointer}
-.menu-body{padding:20px 16px 34px}
-.menu-group{border:1px solid rgba(139,92,246,.18);border-radius:18px;background:linear-gradient(145deg,rgba(139,92,246,.07),rgba(255,255,255,.025));overflow:hidden;margin-bottom:11px}
-.menu-group-toggle{width:100%;border:0;background:none;color:var(--text);padding:17px 17px;display:flex;align-items:center;gap:13px;text-align:left;cursor:pointer;font-weight:800;font-size:15px}
-.menu-group-toggle:hover{background:rgba(255,255,255,.025)}
-.menu-group-icon,.menu-item-icon{width:38px;height:38px;min-width:38px;border:1px solid rgba(139,92,246,.28);border-radius:11px;display:grid;place-items:center;background:rgba(139,92,246,.08);color:var(--accent2)}
-.menu-group-icon svg,.menu-item-icon svg{width:20px;height:20px;display:block;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.menu-group-label{flex:1}.menu-group-label small{display:block;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.9px;margin-top:3px;text-transform:uppercase}
-.menu-chevron{width:20px;height:20px;transition:transform .22s ease;display:grid;place-items:center;color:var(--accent2)}
-.menu-chevron svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.menu-group.open .menu-chevron{transform:rotate(180deg)}
-.menu-items{display:grid;grid-template-rows:0fr;overflow:hidden;opacity:0;border-top:0 solid var(--line);transition:grid-template-rows .38s cubic-bezier(.22,.8,.24,1),opacity .22s ease,border-top-width .22s ease;will-change:grid-template-rows,opacity}
-.menu-group.open .menu-items{grid-template-rows:1fr;opacity:1;border-top-width:1px}
-.menu-items-inner{min-height:0;padding:10px;overflow:hidden}
-.menu-item{display:flex;align-items:center;gap:12px;padding:11px 10px;border-radius:13px;color:var(--text);transition:background .18s ease,transform .18s ease}
-.menu-item:hover{background:rgba(139,92,246,.1);transform:translate3d(2px,0,0)}
-.menu-item-icon{width:34px;height:34px;min-width:34px;border-radius:10px;background:rgba(255,255,255,.035);border-color:var(--line)}
-.menu-item-icon svg{width:18px;height:18px}
-.menu-item-text{flex:1;font-weight:700;font-size:13px}.menu-item-text small{display:block;color:var(--muted);font-weight:500;font-size:10px;margin-top:2px}.menu-item-arrow{color:var(--muted);font-size:16px}
-.menu-note{margin-top:18px;padding:15px 16px;border:1px dashed rgba(139,92,246,.25);border-radius:14px;color:var(--muted);font-size:11px;line-height:1.6}
-body.menu-open{overflow:hidden}
-body.light .menu-panel{background:linear-gradient(180deg,rgba(248,248,250,.99),rgba(241,241,245,.99))}body.light .menu-head{background:rgba(248,248,250,.97)}
-@media(max-width:720px){.desktop-nav{display:none}.menu-btn{height:44px;padding:0 12px}.menu-btn .menu-label{display:none}.top-actions{gap:8px}.menu-panel{width:min(340px,82vw)}.menu-head{padding:25px 20px 18px}.menu-body{padding:18px 14px 30px}}
-@media(prefers-reduced-motion:reduce){.menu-panel,.menu-backdrop,.menu-items,.menu-chevron,.menu-item,.menu-btn{transition:none!important}}
+.side-nav-toggle{height:44px;padding:0 13px;border-radius:13px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);display:flex;align-items:center;gap:9px;font-weight:800;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.side-nav-toggle:hover{border-color:rgba(139,92,246,.55);background:rgba(139,92,246,.08);transform:translateY(-1px)}
+.side-nav-toggle svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.side-nav{position:fixed;inset:0;z-index:100;visibility:hidden;pointer-events:none}
+.side-nav.open{visibility:visible;pointer-events:auto}
+.side-nav-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.60);opacity:0;transition:opacity .24s ease;will-change:opacity}
+.side-nav-panel{position:absolute;top:0;left:0;width:min(300px,84vw);height:100%;background:linear-gradient(180deg,rgba(15,10,28,.985),rgba(9,6,17,.985));border-right:1px solid rgba(255,255,255,.1);box-shadow:18px 0 55px rgba(0,0,0,.42);transform:translate3d(-102%,0,0);transition:transform .28s cubic-bezier(.22,.8,.24,1);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;will-change:transform;backface-visibility:hidden;display:flex;flex-direction:column}
+.side-nav.open .side-nav-backdrop{opacity:1}.side-nav.open .side-nav-panel{transform:translate3d(0,0,0)}
+.side-nav-head{display:flex;align-items:center;justify-content:space-between;padding:22px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(15,10,28,.97);z-index:3}
+.side-nav-brand{display:flex;align-items:center;gap:10px;font:700 19px "Space Grotesk";letter-spacing:-.5px;color:var(--text)}
+.side-nav-close{width:38px;height:38px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.04);color:var(--text);font-size:20px;line-height:1;cursor:pointer;flex:none}
+.side-nav-body{padding:14px 12px 20px;flex:1}
+.side-nav-group{margin-bottom:5px}
+.side-nav-group-toggle{width:100%;border:0;background:none;color:var(--text);padding:13px 12px;border-radius:13px;display:flex;align-items:center;gap:13px;text-align:left;cursor:pointer;font-weight:800;font-size:14px;transition:background .18s ease,color .18s ease}
+.side-nav-group-toggle:hover{background:rgba(139,92,246,.1);color:var(--accent2)}
+.side-nav-group.open>.side-nav-group-toggle{background:rgba(139,92,246,.14);color:var(--accent2)}
+.side-nav-icon{width:22px;height:22px;min-width:22px;display:grid;place-items:center;color:inherit}
+.side-nav-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.side-nav-label{flex:1}.side-nav-label small{display:block;color:var(--muted);font-size:9px;font-weight:600;letter-spacing:.8px;margin-top:2px;text-transform:uppercase}
+.side-nav-chevron{width:18px;height:18px;transition:transform .22s ease;display:grid;place-items:center;color:var(--muted);flex:none}
+.side-nav-chevron svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.side-nav-group.open .side-nav-chevron{transform:rotate(180deg)}
+.side-nav-items{display:grid;grid-template-rows:0fr;overflow:hidden;opacity:0;transition:grid-template-rows .34s cubic-bezier(.22,.8,.24,1),opacity .2s ease;will-change:grid-template-rows,opacity}
+.side-nav-group.open .side-nav-items{grid-template-rows:1fr;opacity:1}
+.side-nav-items-inner{min-height:0;padding:2px 4px 6px 30px}
+.side-nav-item{display:flex;align-items:center;gap:11px;padding:10px 10px;border-radius:12px;color:var(--text);transition:background .18s ease,color .18s ease}
+.side-nav-item:hover{background:rgba(139,92,246,.12);color:var(--accent2)}
+.side-nav-item-icon{width:18px;height:18px;min-width:18px;display:grid;place-items:center}
+.side-nav-item-icon svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.side-nav-item-text{flex:1;font-weight:700;font-size:12.5px}.side-nav-item-text small{display:block;color:var(--muted);font-weight:500;font-size:9.5px;margin-top:1px}
+.side-nav-item-arrow{color:var(--muted);font-size:14px}
+.side-nav-foot{margin:14px 12px 4px;padding:13px 14px;border:1px dashed rgba(139,92,246,.25);border-radius:14px;color:var(--muted);font-size:10.5px;line-height:1.6}
+body.side-nav-open{overflow:hidden}
+body.light .side-nav-panel{background:linear-gradient(180deg,rgba(248,248,250,.99),rgba(241,241,245,.99))}body.light .side-nav-head{background:rgba(248,248,250,.97)}
+@media(max-width:720px){.desktop-nav{display:none}.side-nav-toggle{height:44px;padding:0 12px}.side-nav-toggle .side-nav-toggle-label{display:none}.top-actions{gap:8px}.side-nav-panel{width:min(280px,80vw)}.side-nav-head{padding:19px 16px}.side-nav-body{padding:12px 10px 18px}}
+@media(prefers-reduced-motion:reduce){.side-nav-panel,.side-nav-backdrop,.side-nav-items,.side-nav-chevron{transition:none!important}}
 
 /* Consistent action icons — SVG instead of platform-dependent text glyphs. */
 .hero-actions .btn-icon,.footer-links .btn-icon{display:inline-grid;place-items:center;width:17px;height:17px;vertical-align:middle;margin-left:4px}
