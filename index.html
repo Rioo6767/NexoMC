@@ -6,12 +6,78 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  /* Tambahan CSS untuk Bagian Kesimpulan */
+  .conclusion-section {
+    max-width: 950px;
+    margin: 0 auto 120px;
+    padding: 0 20px;
+  }
+  .conclusion-box {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 50px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 25px 60px rgba(0,0,0,.25);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Garis aksen di atas kotak kesimpulan */
+  .conclusion-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #8b5cf6, #a78bfa, #19d99b);
+  }
+  .conclusion-box h2 {
+    font: 700 34px "Space Grotesk";
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+    color: var(--text);
+  }
+  .conclusion-box p {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+    margin-bottom: 18px;
+    text-align: justify;
+  }
+  .conclusion-box p:last-child {
+    margin-bottom: 0;
+  }
+  .conclusion-box strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .highlight-text {
+    color: var(--accent2);
+    font-style: italic;
+  }
+  
+  @media(max-width: 768px) {
+    .conclusion-box {
+      padding: 35px 25px;
+    }
+    .conclusion-box h2 {
+      font-size: 28px;
+    }
+    .conclusion-box p {
+      font-size: 15px;
+      text-align: left;
+    }
+  }
+</style>
 </head>
 <body>
 <canvas id="networkCanvas" aria-hidden="true"></canvas><div class="page-glow glow-a"></div><div class="page-glow glow-b"></div><div class="grid-bg"></div>
 <header class="topbar">
 <a class="brand" href="./" aria-label="Hak dan Kewajiban home"><span class="brand-mark"><span></span><span></span></span><span><strong>Hak dan Kewajiban</strong><small><i></i> LINGKUNGAN BERSAMA</small></span></a>
-<nav class="desktop-nav"><a href="#hak">Hak</a><a href="#kewajiban">Kewajiban</a></nav>
+<nav class="desktop-nav"><a href="#hak">Hak</a><a href="#kewajiban">Kewajiban</a><a href="#kesimpulan">Kesimpulan</a></nav>
 <div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="Ganti tema">◐</button></div>
 </header>
 
@@ -19,7 +85,7 @@
 <section class="hero" id="about">
 <div class="hero-copy reveal"><div class="eyebrow"><span class="pulse"></span> BELAJAR DARI // KAMPUNG HARMONI</div>
 <h1><span id="typedTitle"></span><span class="caret">_</span></h1>
-<p class="hero-desc">Karena hidup bersama bukan hanya tentang menikmati apa yang sudah tersedia, tetapi juga tentang apa yang bisa kita jaga bersama. Perubahan besar selalu dimulai dari hal sederhana.</p>
+<p class="hero-desc">Karena hidup bersama bukan hanya tentang menikmati apa yang sudah tersedia, tetapi juga tentang apa yang bisa kita jaga bersama. Perubahan besar di masyarakat selalu dimulai dari hal-hal yang sederhana.</p>
 <div class="hero-actions"><a class="primary-btn" href="#hak">Pelajari Hak <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></a><a class="ghost-btn" href="#kewajiban">Lihat Kewajiban <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></a></div>
 <div class="hero-status"><span></span> LINGKUNGAN TERJAGA</div></div>
 </section>
@@ -30,18 +96,18 @@
   <div class="feature-grid">
     <article>
       <div class="feature-icon">✦</div>
-      <h3>Menikmati Lingkungan</h3>
-      <p>Setiap warga berhak untuk menikmati lingkungan yang bersih, tertib, dan nyaman di sekitarnya.</p>
+      <h3>Menikmati Lingkungan Bersih</h3>
+      <p>Setiap warga berhak untuk tinggal di lingkungan yang tertib, nyaman, dan terbebas dari bencana seperti banjir. Sungai yang ada berhak dinikmati kejernihannya tanpa ada tumpukan sampah yang mengganggu.</p>
     </article>
     <article>
       <div class="feature-icon">◈</div>
-      <h3>Fasilitas Umum</h3>
-      <p>Berhak menggunakan fasilitas yang dibangun, seperti jalan yang bagus dan sungai beraliran jernih.</p>
+      <h3>Penggunaan Fasilitas Umum</h3>
+      <p>Warga memiliki hak penuh untuk menggunakan infrastruktur dan fasilitas yang telah dibangun bersama. Hal ini mencakup menikmati akses jalan desa yang mulus untuk menunjang aktivitas dan mobilitas sehari-hari.</p>
     </article>
     <article>
       <div class="feature-icon">⌁</div>
       <h3>Menyampaikan Pendapat</h3>
-      <p>Diberikan kesempatan untuk bersuara dan didengarkan dengan baik saat musyawarah warga.</p>
+      <p>Dalam pengambilan keputusan desa, setiap warga berhak untuk bersuara, memberikan usulan terkait keamanan atau pembangunan, serta didengarkan dan dihargai pendapatnya dalam musyawarah warga.</p>
     </article>
   </div>
 </section>
@@ -52,19 +118,29 @@
   <div class="feature-grid">
     <article>
       <div class="feature-icon">✧</div>
-      <h3>Menjaga Kebersihan</h3>
-      <p>Wajib membuang sampah pada tempatnya, bukan ke sungai yang dapat menyumbat aliran air.</p>
+      <h3>Menjaga Kebersihan Alam</h3>
+      <p>Wajib membuang sampah pada tempatnya. Membuang sampah sembarangan (seperti plastik dan botol minuman) ke sungai dapat menyumbat aliran air, yang akibatnya akan merugikan dan menyusahkan seluruh warga desa.</p>
     </article>
     <article>
       <div class="feature-icon">∞</div>
-      <h3>Kerja Bakti</h3>
-      <p>Berpartisipasi aktif dalam kegiatan warga, seperti gotong royong membersihkan lumpur dan sampah.</p>
+      <h3>Partisipasi Gotong Royong</h3>
+      <p>Jika ingin menikmati lingkungan yang bersih, warga wajib turun tangan dalam kerja bakti. Kita tidak boleh bermalas-malasan atau sekadar menunggu orang lain yang bekerja untuk mengangkat sampah dan membersihkan saluran air.</p>
     </article>
     <article>
       <div class="feature-icon">❖</div>
-      <h3>Merawat Fasilitas</h3>
-      <p>Wajib ikut merawat, mematuhi aturan, dan saling menghargai agar fasilitas umum tidak cepat rusak.</p>
+      <h3>Merawat dan Saling Mengingatkan</h3>
+      <p>Warga diwajibkan mematuhi aturan, ikut merawat fasilitas publik agar tidak cepat rusak, dan memiliki kepedulian sosial dengan berani menegur serta menasihati teman atau tetangga yang membuang sampah sembarangan.</p>
     </article>
+  </div>
+</section>
+
+<!-- KESIMPULAN / PENJELASAN RINCI -->
+<section class="conclusion-section reveal" id="kesimpulan">
+  <div class="conclusion-box">
+    <h2>Makna Harmoni: Keseimbangan Bersama</h2>
+    <p>Kisah Bima di Kampung Harmoni memberikan pelajaran berharga bahwa kehidupan bermasyarakat menuntut keseimbangan mutlak antara hak dan kewajiban. Kita sering kali menyadari bahwa <strong>apa yang dilakukan oleh seseorang tidak hanya berdampak pada dirinya sendiri, tetapi dapat memengaruhi kehidupan seluruh warga di sekitarnya.</strong> Kelalaian kecil seperti membuang bungkus makanan ke sungai dapat berujung pada bencana banjir yang merugikan aktivitas satu desa.</p>
+    <p>Sebaliknya, pembangunan yang baik—seperti jalanan baru dan fasilitas umum—harus diiringi dengan kesadaran kolektif untuk merawat dan menggunakannya secara bijaksana. <span class="highlight-text">"Kalau kita ingin menikmati lingkungan yang bersih dan nyaman, kita juga harus ikut menjaganya."</span></p>
+    <p>Kesimpulannya, perubahan besar demi terciptanya lingkungan yang ideal dan harmonis selalu dimulai dari langkah-langkah personal yang sederhana: <strong>berani mengakui kesalahan masa lalu, memiliki kemauan kuat untuk memperbaiki diri, dan memupuk rasa peduli yang tinggi</strong> terhadap lingkungan alam serta sesama manusia di sekitar kita.</p>
   </div>
 </section>
 
@@ -90,13 +166,13 @@
     el.textContent = w.slice(0, ci);
     if(!del && ci < w.length) {
       ci++; 
-      setTimeout(type, 65);
+      setTimeout(type, 50);
     } else if(!del) {
       del = true; 
       setTimeout(type, 1700);
     } else if(ci > 0) {
       ci--; 
-      setTimeout(type, 32);
+      setTimeout(type, 25);
     } else {
       del = false; 
       wi = (wi + 1) % words.length; 
