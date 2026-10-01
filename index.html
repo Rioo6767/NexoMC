@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050507"><title>Harmoni — Hak & Kewajiban</title>
+<meta name="theme-color" content="#050507"><title>Hak dan Kewajiban</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -10,8 +10,8 @@
 <body>
 <canvas id="networkCanvas" aria-hidden="true"></canvas><div class="page-glow glow-a"></div><div class="page-glow glow-b"></div><div class="grid-bg"></div>
 <header class="topbar">
-<a class="brand" href="./" aria-label="Harmoni home"><span class="brand-mark"><span></span><span></span></span><span><strong>Harmoni</strong><small><i></i> LINGKUNGAN BERSAMA</small></span></a>
-<nav class="desktop-nav"><a href="#hak">Hak</a><a href="#kewajiban">Kewajiban</a><a href="#footer">Pesan</a></nav>
+<a class="brand" href="./" aria-label="Hak dan Kewajiban home"><span class="brand-mark"><span></span><span></span></span><span><strong>Hak dan Kewajiban</strong><small><i></i> LINGKUNGAN BERSAMA</small></span></a>
+<nav class="desktop-nav"><a href="#hak">Hak</a><a href="#kewajiban">Kewajiban</a></nav>
 <div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="Ganti tema">◐</button></div>
 </header>
 
@@ -22,14 +22,6 @@
 <p class="hero-desc">Karena hidup bersama bukan hanya tentang menikmati apa yang sudah tersedia, tetapi juga tentang apa yang bisa kita jaga bersama. Perubahan besar selalu dimulai dari hal sederhana.</p>
 <div class="hero-actions"><a class="primary-btn" href="#hak">Pelajari Hak <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></a><a class="ghost-btn" href="#kewajiban">Lihat Kewajiban <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></a></div>
 <div class="hero-status"><span></span> LINGKUNGAN TERJAGA</div></div>
-</section>
-
-<!-- Statistik / Poin Penting -->
-<section class="stats reveal">
-  <div><strong id="totalViews">0</strong><span>Warga Peduli</span></div>
-  <div><strong>100%</strong><span>Tanggung Jawab</span></div>
-  <div><strong>Bersih</strong><span>Kondisi Sungai</span></div>
-  <div><strong>1</strong><span>Kampung Harmoni</span></div>
 </section>
 
 <!-- HAK WARGA -->
@@ -59,19 +51,16 @@
   <div class="feature-title"><div class="eyebrow">KEWAJIBAN KITA</div><h2>Tanggung Jawab <em>Bersama.</em></h2></div>
   <div class="feature-grid">
     <article>
-      <!-- Menggunakan simbol bintang bersih (sparkle) yang modern -->
       <div class="feature-icon">✧</div>
       <h3>Menjaga Kebersihan</h3>
       <p>Wajib membuang sampah pada tempatnya, bukan ke sungai yang dapat menyumbat aliran air.</p>
     </article>
     <article>
-      <!-- Menggunakan simbol infinity yang melambangkan kebersamaan berkesinambungan -->
       <div class="feature-icon">∞</div>
       <h3>Kerja Bakti</h3>
       <p>Berpartisipasi aktif dalam kegiatan warga, seperti gotong royong membersihkan lumpur dan sampah.</p>
     </article>
     <article>
-      <!-- Menggunakan simbol diamond struktur -->
       <div class="feature-icon">❖</div>
       <h3>Merawat Fasilitas</h3>
       <p>Wajib ikut merawat, mematuhi aturan, dan saling menghargai agar fasilitas umum tidak cepat rusak.</p>
@@ -80,21 +69,6 @@
 </section>
 
 </main>
-
-<footer id="footer">
-  <div class="footer-brand">
-    <div class="brand-mark"><span></span><span></span></div>
-    <div><strong>Kampung Harmoni</strong><p>Hak & Kewajiban</p></div>
-  </div>
-  <div class="footer-links">
-    <a href="#hak">Hak</a>
-    <a href="#kewajiban">Kewajiban</a>
-  </div>
-  <div class="footer-bottom">
-    "Kalau kita ingin menikmati lingkungan yang bersih dan nyaman, kita juga harus ikut menjaganya." <span>TUGAS POSTER WEBSITE 2026.</span>
-  </div>
-  <div class="footer-status"><span></span> LINGKUNGAN BERSIH DAN RAPI</div>
-</footer>
 
 <script>
 (function(){
@@ -106,10 +80,6 @@
     document.body.classList.toggle('light', light);
     localStorage.setItem('harmoni-theme', light ? 'light' : 'dark');
   };
-  
-  let views = Number(localStorage.getItem('harmoniViews') || 0) + 1;
-  localStorage.setItem('harmoniViews', views);
-  document.getElementById('totalViews').textContent = views;
   
   const words = ['Hak dan Kewajiban Kita', 'Keseimbangan Hidup Bersama', 'Peduli Terhadap Lingkungan'];
   let wi = 0, ci = 0, del = false;
