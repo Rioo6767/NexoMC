@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050507"><title>NexoMC — Minecraft Network</title>
+<meta name="theme-color" content="#050507"><title>Harmoni — Hak & Kewajiban</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -10,108 +10,130 @@
 <body>
 <canvas id="networkCanvas" aria-hidden="true"></canvas><div class="page-glow glow-a"></div><div class="page-glow glow-b"></div><div class="grid-bg"></div>
 <header class="topbar">
-<a class="brand" href="./" aria-label="NexoMC home"><span class="brand-mark"><span></span><span></span></span><span><strong>NexoMC</strong><small><i></i> MINECRAFT NETWORK</small></span></a>
-<nav class="desktop-nav"><a href="#about">About</a><a href="#features">Features</a><a href="#footer">Contact</a></nav>
-<div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="Ganti tema">◐</button><button class="side-nav-toggle" id="sideNavToggle" aria-controls="sideNav" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg><span class="side-nav-toggle-label">Menu</span></button></div>
+<a class="brand" href="./" aria-label="Harmoni home"><span class="brand-mark"><span></span><span></span></span><span><strong>Harmoni</strong><small><i></i> LINGKUNGAN BERSAMA</small></span></a>
+<nav class="desktop-nav"><a href="#hak">Hak</a><a href="#kewajiban">Kewajiban</a><a href="#footer">Pesan</a></nav>
+<div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="Ganti tema">◐</button></div>
 </header>
 
-<!-- NexoMC Sidebar -->
-<div class="side-nav" id="sideNav" aria-hidden="true">
-  <div class="side-nav-backdrop" id="sideNavBackdrop"></div>
-  <aside class="side-nav-panel" role="dialog" aria-modal="true" aria-labelledby="sideNavTitle">
-    <div class="side-nav-head">
-      <a class="side-nav-brand" href="./" id="sideNavTitle"><span class="brand-mark"><span></span><span></span></span>NexoMC</a>
-      <button class="side-nav-close" id="sideNavClose" aria-label="Tutup menu">×</button>
-    </div>
-    <div class="side-nav-body">
-      <div class="side-nav-group">
-        <button class="side-nav-group-toggle" type="button" aria-expanded="true">
-          <span class="side-nav-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M9 4v16M15 4v16M5 9h14M5 15h14"/></svg>
-          </span>
-          <span class="side-nav-label">Minecraft<small>Game &amp; Collection</small></span>
-          <span class="side-nav-chevron"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
-        </button>
-        <div class="side-nav-items"><div class="side-nav-items-inner">
-          <a class="side-nav-item" href="./skins/" target="_blank" rel="noopener">
-            <span class="side-nav-item-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 4v4h4V4M12 12v4M8 16h4M16 12h.01"/></svg></span>
-            <span class="side-nav-item-text">Skin Minecraft<small>NexoMC Skin Collection</small></span><span class="side-nav-item-arrow">↗</span>
-          </a>
-        </div></div>
-      </div>
-
-      <div class="side-nav-group">
-        <button class="side-nav-group-toggle" type="button" aria-expanded="false">
-          <span class="side-nav-icon"><svg viewBox="0 0 24 24"><path d="M7 6h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3Z"/><path d="M8 12h4M10 10v4M16 11h.01M18 13h.01"/></svg></span>
-          <span class="side-nav-label">Free Fire<small>Game &amp; Tools</small></span>
-          <span class="side-nav-chevron"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
-        </button>
-        <div class="side-nav-items"><div class="side-nav-items-inner">
-          <a class="side-nav-item" href="#" data-coming-soon="Fake Foto">
-            <span class="side-nav-item-icon"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13.3" r="3.3"/></svg></span>
-            <span class="side-nav-item-text">Fake Foto<small>Coming Soon</small></span><span class="side-nav-item-arrow">›</span>
-          </a>
-          <a class="side-nav-item" href="#" data-coming-soon="Fake Lobby">
-            <span class="side-nav-item-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.5-5.5 5.5-5.5S14.5 17 14.5 20"/><circle cx="17" cy="9" r="2.3"/><path d="M15.8 14.6c2 .4 3.5 2.3 3.7 5"/></svg></span>
-            <span class="side-nav-item-text">Fake Lobby<small>Coming Soon</small></span><span class="side-nav-item-arrow">›</span>
-          </a>
-          <a class="side-nav-item" href="#" data-coming-soon="Fake Chat">
-            <span class="side-nav-item-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4Z"/></svg></span>
-            <span class="side-nav-item-text">Fake Chat<small>Coming Soon</small></span><span class="side-nav-item-arrow">›</span>
-          </a>
-        </div></div>
-      </div>
-
-      <div class="side-nav-group">
-        <button class="side-nav-group-toggle" type="button" aria-expanded="false">
-          <span class="side-nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3 5 7v10l7 4 7-4V7l-7-4Z"/><path d="m5 7 7 4 7-4M12 11v10"/></svg></span>
-          <span class="side-nav-label">Roblox<small>Game &amp; Resources</small></span>
-          <span class="side-nav-chevron"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
-        </button>
-        <div class="side-nav-items"><div class="side-nav-items-inner">
-          <a class="side-nav-item" href="#" data-coming-soon="Roblox Resources">
-            <span class="side-nav-item-icon"><svg viewBox="0 0 24 24"><path d="m7 5 10 2-2 10-10-2 2-10Z"/><path d="m10 9 4 1-1 4-4-1 1-4Z"/></svg></span>
-            <span class="side-nav-item-text">Roblox Resources<small>Coming Soon</small></span><span class="side-nav-item-arrow">›</span>
-          </a>
-        </div></div>
-      </div>
-
-      <div class="side-nav-group">
-        <button class="side-nav-group-toggle" type="button" aria-expanded="false">
-          <span class="side-nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/><circle cx="12" cy="12" r="4"/></svg></span>
-          <span class="side-nav-label">Tools<small>Useful NexoMC Tools</small></span>
-          <span class="side-nav-chevron"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span>
-        </button>
-        <div class="side-nav-items"><div class="side-nav-items-inner">
-          <a class="side-nav-item" href="#" data-coming-soon="Tools">
-            <span class="side-nav-item-icon"><svg viewBox="0 0 24 24"><path d="m14.7 6.3 3-3 3 3-3 3M4 20l9-9M13 5l6 6M5 4h4M4 8h5M4 12h5"/></svg></span>
-            <span class="side-nav-item-text">NexoMC Tools<small>Coming Soon</small></span><span class="side-nav-item-arrow">›</span>
-          </a>
-        </div></div>
-      </div>
-
-      <div class="side-nav-foot">Menu ini dibuat sebagai pusat navigasi NexoMC. Kategori baru bisa ditambahkan tanpa mengubah tampilan homepage.</div>
-    </div>
-  </aside>
-</div>
 <main>
 <section class="hero" id="about">
-<div class="hero-copy reveal"><div class="eyebrow"><span class="pulse"></span> NEXOMC // MINECRAFT NETWORK</div>
+<div class="hero-copy reveal"><div class="eyebrow"><span class="pulse"></span> BELAJAR DARI // KAMPUNG HARMONI</div>
 <h1><span id="typedTitle"></span><span class="caret">_</span></h1>
-<p class="hero-desc">Platform NexoMC untuk berbagai kebutuhan Minecraft dengan tampilan modern, ringan, dan nyaman digunakan di perangkat apa pun.</p>
-<div class="hero-actions"><a class="primary-btn" href="./skins/" target="_blank" rel="noopener">NexoMC Skin <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a><a class="ghost-btn" href="#features">Explore <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></a></div>
-<div class="hero-status"><span></span> ALL SYSTEMS OPERATIONAL</div></div>
-
+<p class="hero-desc">Karena hidup bersama bukan hanya tentang menikmati apa yang sudah tersedia, tetapi juga tentang apa yang bisa kita jaga bersama[span_3](start_span)[span_3](end_span). Perubahan besar selalu dimulai dari hal sederhana[span_4](start_span)[span_4](end_span).</p>
+<div class="hero-actions"><a class="primary-btn" href="#hak">Pelajari Hak <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></a><a class="ghost-btn" href="#kewajiban">Lihat Kewajiban <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></a></div>
+<div class="hero-status"><span></span> LINGKUNGAN TERJAGA</div></div>
 </section>
-<section class="stats reveal"><div><strong id="totalViews">0</strong><span>Total Views</span></div><div><strong>24/7</strong><span>Online Access</span></div><div><strong>100%</strong><span>Free Access</span></div><div><strong>1</strong><span>NexoMC Hub</span></div></section>
-<section class="feature-section reveal" id="features"><div class="feature-title"><div class="eyebrow">WHY NEXOMC</div><h2>Simple. Clean. <em>Ready.</em></h2></div><div class="feature-grid"><article><div class="feature-icon">✦</div><h3>Modern Interface</h3><p>UI clean dengan animasi halus dan layout responsive untuk desktop maupun mobile.</p></article><article><div class="feature-icon">◈</div><h3>NexoMC Hub</h3><p>Satu tempat untuk mengakses berbagai halaman dan layanan NexoMC dengan cepat.</p></article><article><div class="feature-icon">⌁</div><h3>Smooth Experience</h3><p>Background network bergerak, transisi lembut, dan navigasi yang dibuat nyaman.</p></article></div></section>
+
+<!-- Statistik / Poin Penting -->
+<section class="stats reveal">
+  <div><strong id="totalViews">0</strong><span>Warga Peduli</span></div>
+  <div><strong>100%</strong><span>Tanggung Jawab</span></div>
+  <div><strong>Bersih</strong><span>Kondisi Sungai</span></div>
+  <div><strong>1</strong><span>Kampung Harmoni</span></div>
+</section>
+
+<!-- HAK WARGA -->
+<section class="feature-section reveal" id="hak">
+  <div class="feature-title"><div class="eyebrow">HAK KITA</div><h2>Hak di Lingkungan <em>Masyarakat.</em></h2></div>
+  <div class="feature-grid">
+    <article>
+      <div class="feature-icon">✦</div>
+      <h3>Menikmati Lingkungan</h3>
+      <p>Setiap warga berhak untuk menikmati lingkungan yang bersih, tertib, dan nyaman di sekitarnya[span_5](start_span)[span_5](end_span).</p>
+    </article>
+    <article>
+      <div class="feature-icon">◈</div>
+      <h3>Fasilitas Umum</h3>
+      <p>Berhak menggunakan fasilitas yang dibangun, seperti jalan yang bagus dan sungai beraliran jernih[span_6](start_span)[span_6](end_span).</p>
+    </article>
+    <article>
+      <div class="feature-icon">⌁</div>
+      <h3>Menyampaikan Pendapat</h3>
+      <p>Diberikan kesempatan untuk bersuara dan didengarkan dengan baik saat musyawarah warga[span_7](start_span)[span_7](end_span).</p>
+    </article>
+  </div>
+</section>
+
+<!-- KEWAJIBAN WARGA -->
+<section class="feature-section reveal" id="kewajiban">
+  <div class="feature-title"><div class="eyebrow">KEWAJIBAN KITA</div><h2>Tanggung Jawab <em>Bersama.</em></h2></div>
+  <div class="feature-grid">
+    <article>
+      <div class="feature-icon">🚮</div>
+      <h3>Menjaga Kebersihan</h3>
+      <p>Wajib membuang sampah pada tempatnya, bukan ke sungai yang dapat menyumbat aliran air[span_8](start_span)[span_8](end_span).</p>
+    </article>
+    <article>
+      <div class="feature-icon">🤝</div>
+      <h3>Kerja Bakti</h3>
+      <p>Berpartisipasi aktif dalam kegiatan warga, seperti gotong royong membersihkan lumpur dan sampah[span_9](start_span)[span_9](end_span).</p>
+    </article>
+    <article>
+      <div class="feature-icon">🏗️</div>
+      <h3>Merawat Fasilitas</h3>
+      <p>Wajib ikut merawat, mematuhi aturan, dan saling menghargai agar fasilitas tidak rusak[span_10](start_span)[span_10](end_span).</p>
+    </article>
+  </div>
+</section>
+
 </main>
-<footer id="footer"><div class="footer-brand"><div class="brand-mark"><span></span><span></span></div><div><strong>NexoMC</strong><p>Minecraft Network</p></div></div><div class="footer-links"><a href="#about">About</a><a href="#features">Features</a><a href="./skins/" target="_blank" rel="noopener">NexoMC Skin <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></div><div class="footer-bottom">© 2026 NEXOMC NETWORK. <span>ENGINEERED FOR MINECRAFT.</span></div><div class="footer-status"><span></span> ALL SYSTEMS OPERATIONAL</div></footer>
-<script src="config.js"></script><script>
+
+<footer id="footer">
+  <div class="footer-brand">
+    <div class="brand-mark"><span></span><span></span></div>
+    <div><strong>Kampung Harmoni</strong><p>Hak & Kewajiban</p></div>
+  </div>
+  <div class="footer-links">
+    <a href="#hak">Hak</a>
+    <a href="#kewajiban">Kewajiban</a>
+  </div>
+  <div class="footer-bottom">
+    "Kalau kita ingin menikmati lingkungan yang bersih dan nyaman, kita juga harus ikut menjaganya.[span_11](start_span)"[span_11](end_span) <span>TUGAS POSTER WEBSITE 2026.</span>
+  </div>
+  <div class="footer-status"><span></span> LINGKUNGAN BERSIH DAN RAPI</div>
+</footer>
+
+<script>
 (function(){
-const btn=document.getElementById('themeBtn');const saved=localStorage.getItem('nexomc-theme')||'dark';document.body.classList.toggle('light',saved==='light');btn.onclick=()=>{const light=!document.body.classList.contains('light');document.body.classList.toggle('light',light);localStorage.setItem('nexomc-theme',light?'light':'dark');};
-let views=Number(localStorage.getItem('nexomcViews')||0)+1;localStorage.setItem('nexomcViews',views);document.getElementById('totalViews').textContent=views;
-const words=['Welcome To NexoMC'];let wi=0,ci=0,del=false;const el=document.getElementById('typedTitle');function type(){const w=words[wi];el.textContent=w.slice(0,ci);if(!del&&ci<w.length){ci++;setTimeout(type,65)}else if(!del){del=true;setTimeout(type,1700)}else if(ci>0){ci--;setTimeout(type,32)}else{del=false;wi=(wi+1)%words.length;setTimeout(type,400)}}type();
+  const btn = document.getElementById('themeBtn');
+  const saved = localStorage.getItem('harmoni-theme') || 'dark';
+  document.body.classList.toggle('light', saved === 'light');
+  btn.onclick = () => {
+    const light = !document.body.classList.contains('light');
+    document.body.classList.toggle('light', light);
+    localStorage.setItem('harmoni-theme', light ? 'light' : 'dark');
+  };
+  
+  let views = Number(localStorage.getItem('harmoniViews') || 0) + 1;
+  localStorage.setItem('harmoniViews', views);
+  document.getElementById('totalViews').textContent = views;
+  
+  /* MENGGANTI TEKS ANIMASI KETIKAN DI SINI */
+  const words = ['Hak dan Kewajiban Kita', 'Keseimbangan Hidup Bersama', 'Peduli Terhadap Lingkungan'];
+  let wi = 0, ci = 0, del = false;
+  const el = document.getElementById('typedTitle');
+  
+  function type(){
+    const w = words[wi];
+    el.textContent = w.slice(0, ci);
+    if(!del && ci < w.length) {
+      ci++; 
+      setTimeout(type, 65);
+    } else if(!del) {
+      del = true; 
+      setTimeout(type, 1700);
+    } else if(ci > 0) {
+      ci--; 
+      setTimeout(type, 32);
+    } else {
+      del = false; 
+      wi = (wi + 1) % words.length; 
+      setTimeout(type, 400);
+    }
+  }
+  type();
 })();
-</script><script src="js/menu.js"></script><script src="js/app.js"></script>
-</body></html>
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
