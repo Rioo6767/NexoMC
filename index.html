@@ -7,7 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
-  /* Tambahan CSS untuk Bagian Kesimpulan */
+  /* --- FIX UNTUK TEKS JUDUL AGAR BISA TURUN KE BAWAH DI HP --- */
+  #typedTitle {
+    white-space: pre-wrap !important; 
+    display: inline !important;
+  }
+  .hero h1 {
+    white-space: normal !important;
+    word-wrap: break-word;
+    line-height: 1.2 !important; /* Memberi jarak antar baris judul agar rapi */
+  }
+
+  /* --- Tambahan CSS untuk Bagian Kesimpulan --- */
   .conclusion-section {
     max-width: 950px;
     margin: 0 auto 120px;
@@ -24,7 +35,6 @@
     position: relative;
     overflow: hidden;
   }
-  /* Garis aksen di atas kotak kesimpulan */
   .conclusion-box::before {
     content: '';
     position: absolute;
